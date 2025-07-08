@@ -1,0 +1,315 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #1d5098, #FD6585);
+  color: black;
+}
+
+/* Form and Inputs */
+input,
+button {
+  padding: 10px;
+  margin: 8px 5px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+form {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Buttons */
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  overflow-x: auto;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  word-break: break-word;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Section Headings */
+h2 {
+  margin-top: 0;
+}
+
+/* Container Sections */
+.dues-page,
+.dashboard-page {
+  padding: 20px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 1200px;
+  overflow-x: auto;
+}
+
+/* Links */
+a {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2196f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input,
+.login-container button {
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #534ea9, #35849c);
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 61px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  padding-left: 10px;
+  padding-bottom: 15px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  font-size: 20px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a,
+.nav-links li button {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover,
+.nav-links li button:hover {
+  background-color: rgba(21, 108, 145, 0.771);
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #35849c;
+    width: 200px;
+    display: none;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a,
+  .nav-links li button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.contact-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.contact-btn.spin {
+  transform: rotate(360deg);
+}
+
+.contact-options {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  animation: spread 0.5s ease-in-out;
+}
+
+.contact-options a {
+  background-color: #555;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact-options a:hover {
+  background-color: #777;
+}
+
+@keyframes spread {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .dues-page,
+  .dashboard-page {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  .login-container {
+    margin: 30px 15px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  button,
+  input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .nav-links li a,
+  .nav-links li button {
+    font-size: 18px;
+  }
+
+  .footer {
+    padding: 8px 15px;
+  }
+
+  .contact-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .contact-options a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+} 

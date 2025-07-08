@@ -1,0 +1,26 @@
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Dependency directories
+client/node_modules/
+server/node_modules/
+
+# Build outputs
+client/dist/
+server/dist/
+server/build/
+
+# Environment variables
+*.env
+*.local
+client/.env
+server/.env
+
+# Editor settings
+.DS_Store
+.vscode/
+.idea/
