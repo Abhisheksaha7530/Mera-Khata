@@ -1,22 +1,12 @@
-
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import User from '../models/User.js';
 import sendEmail from '../utils/sendEmail.js';
+import { CLIENT_URL, JWT_SECRET } from '../config/env.js';
 
 const router = express.Router();
-
-// Fallback JWT secret if env fails (Only use this in dev/test)
-const JWT_SECRET = process.env.JWT_SECRET || 'fallback_dev_secret_key';
-const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
-
-if (!JWT_SECRET) {
-  console.error('❌ JWT secret is missing. Define it in .env or fallback will be used.');
-}
-
-console.log("✅ JWT_SECRET being used:", JWT_SECRET);
 
 // ========== REGISTER ==========
 router.post('/register', async (req, res) => {

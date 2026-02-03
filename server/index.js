@@ -1,9 +1,3 @@
-
-import dotenv from 'dotenv';
-dotenv.config();
-
-console.log("🔐 JWT_SECRET is:", process.env.JWT_SECRET); // Optional: debug
-
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -12,17 +6,9 @@ import morgan from 'morgan';
 
 import authRoutes from './routes/auth.js';
 import entryRoutes from './routes/entries.js';
+import { MONGO_URI } from './config/env.js';
 
 const app = express();
-
-//  Required env checks
-const MONGO_URI = process.env.MONGO_URI;
-const JWT_SECRET = process.env.JWT_SECRET;
-
-if (!MONGO_URI || !JWT_SECRET) {
-  console.error(' Missing required environment variables (MONGO_URI or JWT_SECRET)');
-  process.exit(1);
-}
 
 //  Middleware
 app.use(cors());
